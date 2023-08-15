@@ -1,6 +1,12 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
+const mysql = require ('mysql');
+const cors = require ('cors');
+const bcrypt = require('bcrypt')
+// standard for express
+app.use(cors());
+app.use(express.json());
 
 app.get("/", (req, res) => res.type('html').send(html));
 
