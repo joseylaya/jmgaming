@@ -17,7 +17,7 @@ const db = mysql.createConnection({
   database: 'academy'
 });
 
-app.get("/", (req, res) => res.type('html').send(html));
+// app.get("/", (req, res) => res.type('html').send(html));
 
 
 // insert quert
