@@ -8,6 +8,19 @@ const bcrypt = require('bcrypt')
 app.use(cors());
 app.use(express.json());
 
+// db con
+const db = mysql.createConnection({
+  user: 'root',
+  host: 'localhost',
+  password: '',
+  database: 'academy'
+});
+
+if(db){
+  console.log("goods")
+}else{
+  console.log("wa")
+}
 app.get("/", (req, res) => res.type('html').send(html));
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
