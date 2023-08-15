@@ -23,6 +23,17 @@ if(db){
 }
 app.get("/", (req, res) => res.type('html').send(html));
 
+// fetch query
+app.get('/fetchUser', (req, res) =>{
+  db.query("SELECT * FROM userstbl",  (err, result) =>{
+      if(err){
+          console.log(err)
+      }else{
+          res.send(result)
+      }
+  })
+})
+
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 server.keepAliveTimeout = 120 * 1000;
