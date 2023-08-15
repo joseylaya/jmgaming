@@ -12,13 +12,12 @@ app.use(express.json());
 // db con
 const db = mysql.createConnection({
   user: 'root',
-  host: 'academy.proweaver.tools',
+  host: 'http://academy.proweaver.tools',
   password: 'lqNx5ihw0afY69kj',
   database: 'academy'
 });
 
 app.get("/", (req, res) => res.type('html').send(html));
-
 
 
 // insert quert
