@@ -12,7 +12,7 @@ app.use(express.json());
 const db = mysql.createConnection({
   user: 'root',
   host: 'localhost',
-  password: '',
+  password: 'lqNx5ihw0afY69kj',
   database: 'academy'
 });
 
@@ -21,6 +21,7 @@ if(db){
 }else{
   console.log("wa")
 }
+
 app.get("/", (req, res) => res.type('html').send(html));
 
 // fetch query
