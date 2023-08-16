@@ -17,18 +17,19 @@ const db = mysql.createConnection({
 });
 
 // Attempt to connect to the database
-db.connect((err) => {
-  if (err) {
-      console.error('Error connecting to the database:', err);
-      return;
-  }
 
-  console.log('Connected to the database!');
-});
 
 app.get("/", (req, res) => res.type('html').send(html));
 
-
+app.post('/test', (req, res) => {
+  db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the database!');
+  });
+});
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 server.keepAliveTimeout = 120 * 1000;
