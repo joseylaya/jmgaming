@@ -21,7 +21,7 @@ const db = mysql.createConnection({
 
 app.get("/", (req, res) => res.type('html').send(html));
 
-app.post('/test', (req, res) => {
+app.get('/test', (req, res) => {
   db.connect((err) => {
     if (err) {
         console.error('Error connecting to the database:', err);
